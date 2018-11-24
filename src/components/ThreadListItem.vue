@@ -27,5 +27,21 @@
 </template>
 
 <script>
-export default {};
+import sourceData from "@/data/data.json";
+export default {
+  props: {
+    thread: {
+      required: true,
+      type: Object
+    }
+  },
+  computed: {
+    user() {
+      return sourceData.users[this.thread.userId];
+    },
+    repliesCount() {
+      return Object.keys(this.thread.posts).length - 1;
+    }
+  }
+};
 </script>
