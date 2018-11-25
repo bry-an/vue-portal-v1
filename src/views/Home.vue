@@ -1,17 +1,30 @@
 <template>
-  <div class="col-full">
-    <HelloWorld />
+  <div class = 'col-full'>
+    <h1>Welcome to the forum</h1>
+    <ThreadList :threads='threads'/>
   </div>
 </template>
 
+
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import data from "@/data/data.json";
+import ThreadList from "@/components/ThreadList";
 
 export default {
-  name: "home",
+  name: "HelloWorld",
+  data() {
+    return {
+      threads: Object.values(data.threads),
+      posts: data.posts,
+      users: data.users
+    };
+  },
   components: {
-    HelloWorld
+    ThreadList
   }
 };
 </script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped lang="scss">
+</style> 
