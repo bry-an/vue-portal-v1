@@ -1,7 +1,7 @@
 import Vue from "vue";
 import Router from "vue-router";
 import Home from "./views/Home.vue";
-import ThreadShow from "@/components/ThreadShow";
+import ThreadShow from "@/views/ThreadShow";
 
 Vue.use(Router);
 
@@ -18,7 +18,7 @@ export default new Router({
       path: "/thread/:id",
       name: "ThreadShow",
       component: ThreadShow,
-      props: true,
+      props: true
     },
     // {
     // path: "/about",
